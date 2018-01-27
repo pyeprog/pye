@@ -1,0 +1,11 @@
+header
+  nav.nav-wrapper
+    .logo
+      img#logo-img(src="img/logo.png")
+      h1 PYE
+
+    - var menu = ["About me", "Articles", "My work"]
+    ul
+      each mi in menu
+        li.menu-item
+          a(href="#")= mi
