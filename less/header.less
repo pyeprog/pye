@@ -1,16 +1,16 @@
-// body default
-body {
-  margin: 0;
-}
-
 // Header start
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
 @header-height: 40px;
 @header-menu-width: 1000px;
 @header-border-width: 1px;
 @header-border-color: grey;
 @header-logo-font-size: 20px;
+@header-logo-font: "Great Vibes", serif;
 @header-menu-color: #ffffff;
-@header-font-color: grey;
+@header-menu-font-color: grey;
+@header-menu-font: "Share Tech Mono", cursive;
 
 .flexbox(@justify) {
   display: flex;
@@ -51,6 +51,7 @@ header {
 
         h1 {
           font-size: @header-logo-font-size;
+          font-family: @header-logo-font;
           padding-left: 5px;
         }
       }
@@ -66,10 +67,11 @@ header {
         height: @header-height;
 
         a {
-          .headerlink(@header-font-color);
-          display: block;
+          .headerlink(@header-menu-font-color);
           line-height: @header-height;
           background-color: @header-menu-color;
+          font-family: @header-menu-font;
+          display: block;
           padding: 0 8px;
           transition: 0.5s;
           &:hover {

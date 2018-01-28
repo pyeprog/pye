@@ -1,6 +1,5 @@
-body {
-  margin: 0;
-}
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 header {
   height: 40px;
   border-bottom-style: solid;
@@ -33,6 +32,7 @@ header nav.nav-wrapper div.logo a img#logo-img {
 }
 header nav.nav-wrapper div.logo a h1 {
   font-size: 20px;
+  font-family: "Great Vibes", serif;
   padding-left: 5px;
 }
 header nav.nav-wrapper ul {
@@ -49,9 +49,10 @@ header nav.nav-wrapper ul li.menu-item {
 header nav.nav-wrapper ul li.menu-item a {
   text-decoration: none;
   color: grey;
-  display: block;
   line-height: 40px;
   background-color: #ffffff;
+  font-family: "Share Tech Mono", cursive;
+  display: block;
   padding: 0 8px;
   transition: 0.5s;
 }
