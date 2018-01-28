@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Cairo);
+
+@footer-font-size: 12px;
+@footer-font: "Cairo";
+
+.sink {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+footer {
+  .sink;
+  
+  .footer-wrapper {
+    margin: 0 auto;
+
+    p {
+      font-family: @footer-font;
+      margin: 0;
+      text-align: center;
+      line-height: @footer-font-size * 1.5;;
+      font-size: @footer-font-size;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
