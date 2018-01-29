@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Cairo);
+footer {
+  position: static;
+}
+footer .footer-wrapper {
+  margin: 0 auto;
+}
+footer .footer-wrapper p {
+  font-family: "Cairo";
+  margin: 0;
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+}
+footer .footer-wrapper p a {
+  text-decoration: none;
+  color: grey;
+}
