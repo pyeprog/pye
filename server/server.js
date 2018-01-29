@@ -23,6 +23,7 @@ app.get('/:id', (req, res) => {
   }).then((article) => {
     var body = _.get(article, 'body');
     body = mdEngine.render(body);
+    console.log(body);
     res.render('article.pug', {body});
   });
 });
