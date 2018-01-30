@@ -1,0 +1,40 @@
+div.card-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+div.card-wrapper a {
+  margin-top: 30px;
+}
+div.card-wrapper a section.card {
+  width: 250px;
+  height: 180px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  position: relative;
+}
+div.card-wrapper a section.card div.text-wrapper {
+  height: 54px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+div.card-wrapper a section.card div.text-wrapper h3 {
+  font-size: 20px;
+  color: #f2f2f2;
+}
+div.card-wrapper a section.card div.text-wrapper p {
+  font-size: 10px;
+  color: #f2f2f2;
+}

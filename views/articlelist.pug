@@ -1,0 +1,14 @@
+extends layout/layout.pug
+
+mixin card(title, date, plink)
+  a(href= plink)
+    section.card
+      div.text-wrapper
+        h3= title
+        p= date
+
+block main-block
+  link(href="css/articlelist.css" rel="stylesheet" type="text/css")
+  div.card-wrapper
+    each article in articles
+      +card(article.title, article.date, article.plink)

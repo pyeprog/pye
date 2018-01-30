@@ -4,6 +4,7 @@ const {Article} = require('./models/article');
 const pug = require('pug');
 const MarkdownIt = require('markdown-it');
 const _ = require('lodash');
+const moment = require('moment');
 
 var app = express();
 var mdEngine = new MarkdownIt();
@@ -25,6 +26,43 @@ app.get('/:id', (req, res) => {
     body = mdEngine.render(body);
     console.log(body);
     res.render('article.pug', {body});
+  });
+});
+
+app.get('/', (req, res) => {
+  res.render('articlelist.pug', {
+    articles: [
+      {
+        title: "This is not bad",
+        date: moment().format("l"),
+        plink: "http://www.baidu.com"
+      },
+      {
+        title: "This is bad actually",
+        date: moment().format("l"),
+        plink: "http://www.douban.com"
+      },
+      {
+        title: "This is not bad",
+        date: moment().format("l"),
+        plink: "http://www.baidu.com"
+      },
+      {
+        title: "This is bad actually",
+        date: moment().format("l"),
+        plink: "http://www.douban.com"
+      },
+      {
+        title: "This is not bad",
+        date: moment().format("l"),
+        plink: "http://www.baidu.com"
+      },
+      {
+        title: "This is bad actually",
+        date: moment().format("l"),
+        plink: "http://www.douban.com"
+      }
+    ]
   });
 });
 
