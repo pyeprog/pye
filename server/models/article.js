@@ -1,6 +1,6 @@
 const path = require('path');
 const {mongoose} = require(path.join(__dirname, '..', 'mongoose/mongoose'));
-const {ArticleListItem} = require('./item');
+const ArticleListItem = require('./articleListItem');
 
 var articleSchema = mongoose.Schema({
   title: {
@@ -17,7 +17,7 @@ var articleSchema = mongoose.Schema({
   body: {
     type: String,
     required: true,
-    minlength: 1
+    minlength: 1,
   }, 
   date: {
     type: Date,
@@ -26,19 +26,32 @@ var articleSchema = mongoose.Schema({
   group: {
     type: String,
     default: "Recent"
+  },
+  cardimage: {
+    type: String,
+    required: true
+  },
+  nViews: {
+    type: Number,
+    default: 0
   }
 });
 
 articleSchema.post('save', function(doc, next) {
-  var description = doc.body.slice(0, 5);
   var newListItem = new ArticleListItem({
     title: doc.title,
     group: doc.group,
-    articleId: doc._id
+    articleId: doc._id,
+    cardimage: doc.cardimage,
+    nViews: doc.nViews
   });
   newListItem.save().then(next());
 });
 
+articleSchema.post('remove', function(doc, next) {
+  ArticleListItem.remove({articleId: doc._id}).then(next());
+});
+
 var Article = mongoose.model("Article", articleSchema);
 
-module.exports = {Article};
+module.exports = Article;

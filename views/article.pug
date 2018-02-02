@@ -1,7 +1,17 @@
 extends layout/layout.pug
 
 block main-block
-  link(href="css/article.css" rel="stylesheet" type="text/css")
+  link(href="/css/article.css" rel="stylesheet" type="text/css")
+  link(href="/css/github-markdown.css" rel="stylesheet" type="text/css")
   main
-    article
-      != body
+    article.markdown-body
+      h1.title #{title} 
+
+      div.detail
+        p.author #[i.fas.fa-pencil-alt] #{author}
+        p.group #[i.fas.fa-fire] Popular
+        p.view #[i.fas.fa-eye] #{nViews}
+        p.date #[i.far.fa-calendar-alt] #{date}
+
+      section.body
+        != body

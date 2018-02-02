@@ -1,14 +1,18 @@
 extends layout/layout.pug
 
-mixin card(title, date, plink)
-  a(href= plink)
-    section.card
-      div.text-wrapper
-        h3= title
-        p= date
+mixin card(title, date, articleLink, imageLink, nViews)
+  a(href= articleLink)
+    section.card(style=`background-image: url(${imageLink})`)
+      div.title-wrapper
+        div.main-wrapper
+          p #[i.far.fa-calendar-alt] #{date}
+          h3= title
+
+        div.detail-wrapper
+          p #[i.fas.fa-eye] #{nViews}
 
 block main-block
-  link(href="css/articlelist.css" rel="stylesheet" type="text/css")
+  link(href="/css/articlelist.css" rel="stylesheet" type="text/css")
   div.card-wrapper
     each article in articles
-      +card(article.title, article.date, article.plink)
+      +card(article.title, article.date, article.articleLink, article.cardimage, article.nViews)

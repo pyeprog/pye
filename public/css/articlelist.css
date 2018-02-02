@@ -1,5 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);
+.paper-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 div.card-wrapper {
-  max-width: 800px;
+  max-width: 1080px;
   margin: 40px auto;
   display: flex;
   align-items: center;
@@ -10,31 +14,52 @@ div.card-wrapper a {
   margin-top: 30px;
 }
 div.card-wrapper a section.card {
-  width: 250px;
-  height: 180px;
+  width: 303px;
+  height: 173px;
+  font-family: "Roboto";
   border-style: solid;
   border-width: 1px;
   border-color: #e6e6e6;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-div.card-wrapper a section.card div.text-wrapper {
-  height: 54px;
+div.card-wrapper a section.card div.title-wrapper {
+  height: 51.9px;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
+  border-radius: 0 0 10px 10px;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
-div.card-wrapper a section.card div.text-wrapper h3 {
-  font-size: 20px;
-  color: #f2f2f2;
+div.card-wrapper a section.card div.title-wrapper div.main-wrapper {
+  display: grid;
+  grid-auto-rows: 25.95px;
 }
-div.card-wrapper a section.card div.text-wrapper p {
-  font-size: 10px;
+div.card-wrapper a section.card div.title-wrapper div.main-wrapper h3 {
+  font-size: 15px;
   color: #f2f2f2;
+  margin: 0;
+}
+div.card-wrapper a section.card div.title-wrapper div.main-wrapper p {
+  font-size: 11px;
+  color: #f2f2f2;
+  margin: 0;
+  line-height: 3em;
+}
+div.card-wrapper a section.card div.title-wrapper div.detail-wrapper {
+  padding: 5px;
+  position: relative;
+}
+div.card-wrapper a section.card div.title-wrapper div.detail-wrapper p {
+  font-size: 11px;
+  color: #f2f2f2;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

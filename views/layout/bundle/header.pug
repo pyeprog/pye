@@ -1,13 +1,17 @@
-link(rel="stylesheet", href="css/header.css", type="text/css")
+link( href="/css/header.css" rel="stylesheet" type="text/css")
 header
   nav.nav-wrapper
     .logo
-      a(href="#")
-        img#logo-img(src="img/logo.png")
+      a(href="/")
+        img#logo-img(src="/img/logo.png")
         h1 Pye
 
-    - var menu = ["About me", "Articles", "My work"]
+    - 
+      var menu = {
+        "Articles" : "/article/all",
+        "About me" : "/article/all"
+      }
     ul
-      each mi in menu
+      each ml, mn in menu
         li.menu-item
-          a(href="#")= mi
+          a(href=ml)= mn

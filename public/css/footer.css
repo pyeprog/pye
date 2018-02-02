@@ -17,3 +17,9 @@ footer .footer-wrapper p a {
   text-decoration: none;
   color: grey;
 }
+footer .footer-wrapper p.account {
+  font-size: 17px;
+}
+footer .footer-wrapper p.account a {
+  padding: 0 3px;
+}

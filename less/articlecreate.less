@@ -1,0 +1,35 @@
+@textarea-width: 800px;
+@textarea-height: 70vh;
+form {
+  max-width: @textarea-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div.head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    input#title {
+      margin-top: 10px;
+      flex-basis: 75%;
+    }
+
+    input#author {
+      margin-top: 10px;
+      flex-basis: 20%;
+    }
+
+    input#card-image {
+      margin-top: 10px;
+      flex-basis: 100%;
+    }
+  }
+
+  div.body textarea {
+    min-height: @textarea-height;
+    width: @textarea-width;
+  }
+}

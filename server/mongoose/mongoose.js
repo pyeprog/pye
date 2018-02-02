@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/blog").then(
+mongoose.connect(process.env.MONGODB_URI).then(
   () => {
     console.log('Connected to mongodb');
   },

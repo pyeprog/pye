@@ -1,0 +1,29 @@
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+form div.head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+form div.head input#title {
+  margin-top: 10px;
+  flex-basis: 75%;
+}
+form div.head input#author {
+  margin-top: 10px;
+  flex-basis: 20%;
+}
+form div.head input#card-image {
+  margin-top: 10px;
+  flex-basis: 100%;
+}
+form div.body textarea {
+  min-height: 70vh;
+  width: 800px;
+}

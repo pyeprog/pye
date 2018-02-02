@@ -21,11 +21,19 @@ var listItemSchema = mongoose.Schema({
     required: true,
     validate: {
       validator: ObjectID.isValid,
-      message: '{VALUE} is not a valid ObjectID'
+      message: `{VALUE} is not a valid ObjectID`
     }
+  },
+  cardimage: {
+    type: String,
+    require: true
+  },
+  nViews: {
+    type: Number,
+    default: 0
   }
 });
 
 var ArticleListItem = mongoose.model("ArticleListItem", listItemSchema);
 
-module.exports = {ArticleListItem};
+module.exports = ArticleListItem;
