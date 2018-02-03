@@ -45,7 +45,7 @@ app.post('/article/write', (req, res) => {
   var text = _.pick(req.body, ['title', 'author', 'body', 'cardimage']);
   var article = new Article(text);
   article.save().then((doc) => {
-    res.status(200).send('Article saved');
+    res.redirect('/article/all');
   }).catch((e) => {
     res.status(400).send(e);
   });
