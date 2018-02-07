@@ -5,13 +5,13 @@ const {ObjectID} = require('mongodb');
 const Article = require('./models/article');
 const ArticleListItem = require('./models/articleListItem');
 const pug = require('pug');
-const MarkdownIt = require('markdown-it');
+const MarkdownIt = require('markdown-it')
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 const moment = require('moment');
 
 var app = express();
-var mdEngine = new MarkdownIt();
+var md = new MarkdownIt().use(require('markdown-it-checkbox'));
 
 app.set('view engine', 'pug');
 app.use('/css', express.static('public/css'));
@@ -61,7 +61,7 @@ app.get('/article/id/:id', (req, res) => {
   }, {
     new: true
   }).then((article) => {
-    article.body = mdEngine.render(article.body);
+    article.body = md.render(article.body);
     return new Promise((resolve, reject) => {
       res.render('article.pug', {
         group: article.group,
